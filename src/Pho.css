@@ -1,0 +1,23 @@
+body {
+    background-color: #fff;/* veya istediğiniz arka plan rengini kullanın */
+  }
+.photo-portfolio-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .photo-item {
+    width: calc(33.33% - 10px); /* 3 fotoğraf için genişlik ayarı */
+    margin-bottom: 20px; /* İstediğiniz boşluğu belirleyin */
+    box-sizing: border-box; /* Kenar boşluğu nedeniyle genişlik sorunlarını çözmek için */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .photo-item img {
+    width: 100%;
+    height: auto;
+  }

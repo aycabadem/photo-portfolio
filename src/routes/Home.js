@@ -7,8 +7,8 @@ import Pho from "../Pho";
 const Home = () => {
   return (
     <div className="home-body">
-      <PhotoAlbum layout="masonry" photos={photos} />
-      {/* <Pho /> */}
+      {/* <PhotoAlbum layout="masonry" photos={photos} /> */}
+      <Pho />
     </div>
   );
 };
