@@ -1,6 +1,6 @@
 import React from "react";
-import PhotoAlbum from "react-photo-album";
-import photos from "../photos";
+//import PhotoAlbum from "react-photo-album";
+//import photos from "../photos";
 import "./Home.css";
 import Pho from "../Pho";
 
