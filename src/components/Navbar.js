@@ -17,7 +17,11 @@ function Navbar() {
       <IconContext.Provider value={{ color: "#fff" }}>
         <nav className="navbar">
           <div className="navbar-container container">
-            <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
+            <Link
+              to="/photo-portfolio"
+              className="navbar-logo"
+              onClick={closeMobileMenu}
+            >
               <MdMonochromePhotos className="navbar-icon" />
               Photo Portfolio
             </Link>
@@ -27,7 +31,7 @@ function Navbar() {
             <ul className={click ? "nav-menu active" : "nav-menu"}>
               <li className="nav-item">
                 <NavLink
-                  to="/"
+                  to="/photo-portfolio"
                   className={({ isActive }) =>
                     "nav-links" + (isActive ? " activated" : "")
                   }
