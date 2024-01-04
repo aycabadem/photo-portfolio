@@ -23,15 +23,15 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {
-        path: "/",
+        path: "/photo-portfolio",
         element: <Home queryClient={queryClient} />,
       },
       {
-        path: "about",
+        path: "/photo-portfolio/about",
         element: <About />,
       },
       {
-        path: "contact",
+        path: "/photo-portfolio/contact",
         element: <Contact />,
       },
     ],
