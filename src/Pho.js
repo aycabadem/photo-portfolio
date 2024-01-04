@@ -1,36 +1,28 @@
 import React from "react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { storage } from "./firebase";
 import "./Pho.css";
-//import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import ImageComponent from "./ImageComponent";
+import { BeatLoader } from "react-spinners";
+import { useQuery } from "react-query";
 
-const Pho = () => {
-  const [files, setFiles] = useState([]);
+const fetchImages = async (category) => {
+  const result = await storage.ref().child(category).listAll();
+  const urlPromises = result.items.map((imageRef) => imageRef.getDownloadURL());
+  const urls = await Promise.all(urlPromises);
+  return urls;
+};
+
+const Pho = ({ queryClient }) => {
   const [selectedCategory, setSelectedCategory] = useState("tourmaline");
-  const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const fetchImages = async () => {
-      try {
-        setLoading(true);
-
-        let result = await storage.ref().child(selectedCategory).listAll();
-        let urlPromises = result.items.map((imageRef) =>
-          imageRef.getDownloadURL()
-        );
-
-        const urls = await Promise.all(urlPromises);
-        setFiles(urls);
-      } catch (error) {
-        console.error("Error fetching images:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchImages();
-  }, [selectedCategory]);
+  const { data: files, isLoading } = useQuery(
+    ["images", selectedCategory],
+    () => fetchImages(selectedCategory),
+    {
+      staleTime: 600000,
+    }
+  );
 
   const handleCategoryChange = (category) => {
     setSelectedCategory(category);
@@ -52,8 +44,17 @@ const Pho = () => {
         </button>
       </div>
       <div className="photo-portfolio-container">
-        {loading && <p>Loading...</p>}
-        {!loading &&
+        {isLoading && (
+          <div className="spinner-container">
+            <BeatLoader
+              loading={isLoading}
+              size={30}
+              color="#2980b9"
+              className="spinner"
+            />
+          </div>
+        )}
+        {!isLoading &&
           files.map((photo, index) => (
             <div key={index} className="photo-item">
               <ImageComponent

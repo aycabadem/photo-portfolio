@@ -8,9 +8,9 @@ body {
   }
   
   .photo-item {
-    width: calc(25% - 10px); /* 3 fotoğraf için genişlik ayarı */
-    margin-bottom: 20px; /* İstediğiniz boşluğu belirleyin */
-    box-sizing: border-box; /* Kenar boşluğu nedeniyle genişlik sorunlarını çözmek için */
+    width: calc(25% - 10px); 
+    margin-bottom: 20px;
+    box-sizing: border-box; 
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -48,3 +48,13 @@ body {
     background-color: #2980b9; /* Butona fare üzerine gelindiğinde arka plan rengi */
   }
   
+  .spinner-container {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .spinner {
+    display: inline-block;
+  }
