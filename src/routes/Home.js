@@ -1,6 +1,6 @@
 import React from "react";
 import "./Home.css";
-import Pho from "../Pho";
+import Pho from "../components/Photos";
 
 const Home = ({ queryClient }) => {
   return (

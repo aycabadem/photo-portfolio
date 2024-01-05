@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
-import { storage } from "./firebase";
-import "./Pho.css";
+import { storage } from "../firebase";
+import "./Photos.css";
 import ImageComponent from "./ImageComponent";
 import { BeatLoader } from "react-spinners";
 import { useQuery } from "react-query";
