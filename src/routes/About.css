@@ -26,16 +26,17 @@
     margin-bottom: 10px;
   }
   
-  .name-and-location h1 {
+  h1 {
     color: #025c78; 
   }
   
-  .name-and-location p {
-    color: #025c78; 
+  p {
+    
+   margin-top: 5px;
   }
   
   .bio {
-    margin-top: 50px;
+    margin-top: 30px;
     max-width: 600px;
     text-align: center;
     border-top: 2px solid #025c78; 

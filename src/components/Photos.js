@@ -34,11 +34,12 @@ const Pho = ({ queryClient }) => {
         <button onClick={() => handleCategoryChange("tourmaline")}>
           Tourmaline
         </button>
+        <button onClick={() => handleCategoryChange("amber")}>Amber</button>
         <button onClick={() => handleCategoryChange("morganite")}>
           Morganite
         </button>
-        <button onClick={() => handleCategoryChange("agate")}>Agate</button>
-        <button onClick={() => handleCategoryChange("amber")}>Amber</button>
+        {/* <button onClick={() => handleCategoryChange("agate")}>Agate</button> */}
+
         <button onClick={() => handleCategoryChange("hematite")}>
           Hematite
         </button>

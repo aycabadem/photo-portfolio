@@ -45,9 +45,12 @@ body {
   }
   
   .filter-options button:hover {
-    background-color: #2980b9; /* Butona fare üzerine gelindiğinde arka plan rengi */
+    background-color: #2980b9;
   }
-  
+  .filter-options button:focus {
+    background-color: #2980b9;
+  }
+ 
   .spinner-container {
     position: absolute;
     top: 30%;
@@ -58,3 +61,5 @@ body {
   .spinner {
     display: inline-block;
   }
+
+ 

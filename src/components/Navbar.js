@@ -23,7 +23,7 @@ function Navbar() {
               onClick={closeMobileMenu}
             >
               <MdMonochromePhotos className="navbar-icon" />
-              Photo Portfolio
+              Ayca's Photo Portfolio
             </Link>
             <div className="menu-icon" onClick={handleClick}>
               {click ? <FaTimes /> : <FaBars />}
@@ -36,6 +36,7 @@ function Navbar() {
                     "nav-links" + (isActive ? " activated" : "")
                   }
                   onClick={closeMobileMenu}
+                  end
                 >
                   Home
                 </NavLink>
