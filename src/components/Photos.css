@@ -1,14 +1,27 @@
 body {
-    background-color: #fff;/* veya istediğiniz arka plan rengini kullanın */
+    background-color: #fff;
   }
 .photo-portfolio-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
   }
-  
-  .photo-item {
-    width: calc(25% - 10px); 
+
+  @media only screen and (max-width: 480px){
+    .photo-item {
+      width: calc(1000% - 10px); 
+      margin-bottom: 20px;
+      box-sizing: border-box; 
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      
+    }
+  }
+  @media only screen and (min-width: 480px) { 
+     .photo-item {
+    width: calc(50% - 10px); 
     margin-bottom: 20px;
     box-sizing: border-box; 
     display: flex;
@@ -16,7 +29,32 @@ body {
     justify-content: center;
     align-items: center;
     
-  }
+  }}
+  @media only screen and (min-width: 480px) and (max-width: 800px) { 
+    .photo-item {
+   width: calc(100% - 10px); 
+   margin-bottom: 20px;
+   box-sizing: border-box; 
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   
+ }}
+ @media only screen and (min-width: 1240px) { 
+  .photo-item {
+ width: calc(25% - 10px); 
+ margin-bottom: 20px;
+ box-sizing: border-box; 
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ 
+}}
+
+
+  
   
   .photo-item img {
     width: 100%;
@@ -25,23 +63,39 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
 
-  /* PhotoPortfolio.css */
+
 
 .filter-options {
     display: flex;
     margin-bottom: 20px;
     justify-content: center;
-    gap: 10px; /* İstediğiniz boşluğu belirleyin */
+    gap: 10px; 
+    
   }
+  @media screen and (max-width: 480px) {
+    .filter-options {
+        font-size: 8px;
+        gap: 1px; 
+    }
+}
+@media screen and (max-width: 480px) {
+  .filter-options button{
+    padding: 1px 1px; 
+    border-radius: 1px; 
+    font-size: 10px; 
+    font-weight: bold;
+  }
+}
   
   .filter-options button {
-    background-color: #025c78; /* Buton arka plan rengi */
-    color: #fff; /* Buton metin rengi */
+    background-color: #025c78; 
+    color: #fff; 
     padding: 10px 15px;
     border: none;
-    border-radius: 20px; /* Yuvarlak kenarlar için */
+    border-radius: 20px; 
     cursor: pointer;
-    transition: background-color 0.3s ease; /* Renk geçiş efekti */
+    transition: background-color 0.3s ease; 
+
   }
   
   .filter-options button:hover {
